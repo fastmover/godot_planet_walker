@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://db3r3bky408a8"]
+
+[ext_resource type="PackedScene" uid="uid://bjttjfw27246v" path="res://scenes/cube.tscn" id="1_6h7oj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_votgi"]
+radius = 10.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_vrene"]
+radius = 10.0
+height = 20.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cppqm"]
+albedo_color = Color(0.298039, 0.827451, 0.4, 1)
+
+[node name="planet" type="StaticBody3D"]
+
+[node name="collision" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_votgi")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_vrene")
+surface_material_override/0 = SubResource("StandardMaterial3D_cppqm")
+
+[node name="cube" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.3655, 0)
+
+[node name="cube2" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(2.18773, 1.3449, 0, -1.3449, 2.18773, 0, 0, 0, 2.56806, 5.05316, 9.03839, 0)
+
+[node name="cube3" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(1.51431, 0.610269, -0.702975, -0.930915, 0.992716, -1.14352, -8.25143e-08, 1.34232, 1.1653, 3.47995, 7.28133, 6.68367)
+
+[node name="cube4" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(2.47726, -1.81639, 2.33591, 2.83456, 2.33095, -1.19355, -0.849151, 2.48193, 2.83047, -5.34307, 7.80883, 5.46443)
+
+[node name="cube5" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(1.98145, 1.26624, 3.05992, -2.91053, 2.36682, 0.905285, -1.57963, -2.77261, 2.17025, 1.96014, 8.02137, -7.52077)
+
+[node name="cube6" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(3.45101, 0.756009, 1.55292, -1.3984, -0.81342, 3.50363, 1.0137, -3.69586, -0.453452, -7.16583, 6.37908, -4.06712)
+
+[node name="cube7" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(1.67522, 2.77423, 2.09521, 0.503423, -2.49483, 2.90086, 3.43988, -0.985929, -1.4449, -3.57727, -3.1053, -9.79265)
+
+[node name="cube8" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(1.67522, 3.46927, 0.224442, 0.503423, -0.488591, 3.79479, 3.43988, -1.61803, -0.664665, 9.00245, -2.01848, -3.97)
+
+[node name="cube9" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(-1.59992, 3.50464, 0.224442, 0.697476, 0.0753823, 3.79479, 3.44186, 1.61382, -0.664665, 8.73039, -0.430187, 5.00617)
+
+[node name="cube10" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(-1.31473, 3.62777, 0.0578794, -0.058042, -0.0825847, 3.85777, 3.62777, 1.31341, 0.0826994, -4.01413, 0.0805321, 9.70819)
+
+[node name="cube11" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(-0.423108, 3.6524, -1.17199, 0.356081, 1.21141, 3.64668, 3.81926, 0.291679, -0.469826, -9.97205, -2.16215, -0.96192)
+
+[node name="cube12" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(-1.77676, 2.01646, -2.7694, 0.528614, 3.24374, 2.0227, 3.38471, 0.551919, -1.76966, -5.06552, -9.07442, 0.412755)
+
+[node name="cube13" parent="." instance=ExtResource("1_6h7oj")]
+transform = Transform3D(-1.95433, 2.86267, -1.69656, 1.39475, 2.49103, 2.59654, 3.02123, 0.701776, -2.29613, 2.42341, -7.14437, 6.98897)

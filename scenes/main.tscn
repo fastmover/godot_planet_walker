@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://x1wvor1jbkgo"]
+
+[ext_resource type="PackedScene" uid="uid://db3r3bky408a8" path="res://scenes/planet.tscn" id="1_0rqep"]
+[ext_resource type="PackedScene" uid="uid://bnlml086k3c2v" path="res://scenes/character.tscn" id="1_ywlpx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h07yg"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_7cxre"]
+sky_material = SubResource("ProceduralSkyMaterial_h07yg")
+
+[sub_resource type="Environment" id="Environment_7thtm"]
+background_mode = 2
+sky = SubResource("Sky_7cxre")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7thtm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="planet" parent="." instance=ExtResource("1_0rqep")]
+
+[node name="character" parent="." node_paths=PackedStringArray("planet") instance=ExtResource("1_ywlpx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 145.237, 0)
+planet = NodePath("../planet")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.948876, -0.0439298, 0.312577, 0, 0.990268, 0.139173, -0.315649, 0.132058, -0.939642, 13.261, 11.959, -42.042)

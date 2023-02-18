@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnlml086k3c2v"]
+
+[ext_resource type="Script" path="res://scenes/character.gd" id="1_g0sfa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_twd4m"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yx4ie"]
+radius = 0.4
+height = 1.8
+radial_segments = 32
+rings = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xsip"]
+albedo_color = Color(1, 0, 0.027451, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eb423"]
+
+[node name="character" type="CharacterBody3D"]
+script = ExtResource("1_g0sfa")
+
+[node name="collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_twd4m")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_yx4ie")
+surface_material_override/0 = SubResource("StandardMaterial3D_1xsip")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="mesh"]
+transform = Transform3D(0.57725, 0, 0, 0, 0.203439, 0, 0, 0, 0.360484, 0, 0.442317, -0.267192)
+mesh = SubResource("BoxMesh_eb423")
+
+[node name="camera_yaw" type="Node3D" parent="."]
+
+[node name="camera_pitch" type="Node3D" parent="camera_yaw"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="camera_yaw/camera_pitch"]
+spring_length = 10.0
+
+[node name="camera" type="Camera3D" parent="camera_yaw/camera_pitch/SpringArm3D"]
+current = true
