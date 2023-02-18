@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnlml086k3c2v"]
+[gd_scene load_steps=6 format=3 uid="uid://bt2g5weyvanla"]
 
-[ext_resource type="Script" path="res://scenes/character.gd" id="1_g0sfa"]
+[ext_resource type="Script" path="res://scripts/character.gd" id="1_7j6gs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_twd4m"]
 radius = 0.4
@@ -18,7 +18,7 @@ albedo_color = Color(1, 0, 0.027451, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_eb423"]
 
 [node name="character" type="CharacterBody3D"]
-script = ExtResource("1_g0sfa")
+script = ExtResource("1_7j6gs")
 
 [node name="collision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_twd4m")
