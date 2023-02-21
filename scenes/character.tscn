@@ -23,20 +23,23 @@ script = ExtResource("1_7j6gs")
 [node name="collision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_twd4m")
 
-[node name="mesh" type="MeshInstance3D" parent="."]
+[node name="orientation" type="Node3D" parent="."]
+
+[node name="mesh" type="MeshInstance3D" parent="orientation"]
 mesh = SubResource("CapsuleMesh_yx4ie")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_1xsip")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="mesh"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="orientation/mesh"]
 transform = Transform3D(0.57725, 0, 0, 0, 0.203439, 0, 0, 0, 0.360484, 0, 0.442317, -0.267192)
 mesh = SubResource("BoxMesh_eb423")
 
-[node name="camera_yaw" type="Node3D" parent="."]
+[node name="camera" type="Node3D" parent="orientation"]
 
-[node name="camera_pitch" type="Node3D" parent="camera_yaw"]
+[node name="camera_pitch" type="Node3D" parent="orientation/camera"]
 
-[node name="SpringArm3D" type="SpringArm3D" parent="camera_yaw/camera_pitch"]
+[node name="SpringArm3D" type="SpringArm3D" parent="orientation/camera/camera_pitch"]
 spring_length = 10.0
 
-[node name="camera" type="Camera3D" parent="camera_yaw/camera_pitch/SpringArm3D"]
+[node name="camera" type="Camera3D" parent="orientation/camera/camera_pitch/SpringArm3D"]
 current = true

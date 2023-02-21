@@ -30,6 +30,7 @@ shadow_enabled = true
 [node name="character" parent="." node_paths=PackedStringArray("planet") instance=ExtResource("1_ywlpx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.4909, 0)
 planet = NodePath("../planet")
+mass = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.948876, -0.0439298, 0.312577, 0, 0.990268, 0.139173, -0.315649, 0.132058, -0.939642, 13.261, 11.959, -42.042)
